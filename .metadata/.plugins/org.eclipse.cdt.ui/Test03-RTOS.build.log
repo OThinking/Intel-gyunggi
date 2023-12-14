@@ -1,0 +1,63 @@
+15:42:07 **** Incremental Build of configuration Debug for project Test03-RTOS ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:52:
+../Core/Src/../../../myLib/myLib.c: In function '__io_putchar':
+../Core/Src/../../../myLib/myLib.c:3:30: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+    3 |   HAL_UART_Transmit(&huart2, &c, 1, 10);
+      |                              ^~
+      |                              |
+      |                              int *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:106:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+  106 |   printf("\033[2J\033[1;1HRTOS Test Program Started...\r\n");
+      |   ^~~~~~
+../Core/Src/main.c:53:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   52 | #include "../../../myLib/myLib.c"
+  +++ |+#include <stdio.h>
+   53 | /* USER CODE END PV */
+../Core/Src/main.c:106:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  106 |   printf("\033[2J\033[1;1HRTOS Test Program Started...\r\n");
+      |   ^~~~~~
+../Core/Src/main.c:106:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'StartTask01':
+../Core/Src/main.c:314:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  314 |       printf("\033[3;1Hin Task01...%d\r\n", n++);
+      |       ^~~~~~
+../Core/Src/main.c:314:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'StartTask02':
+../Core/Src/main.c:342:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  342 |         printf("\033[5;1Hin Task02...%d\r\n", n++);
+      |         ^~~~~~
+../Core/Src/main.c:342:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'StartTask03':
+../Core/Src/main.c:370:9: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  370 |         printf("\033[7;1Hin Task03...%d\r\n", n++);
+      |         ^~~~~~
+../Core/Src/main.c:370:9: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'StartTask04':
+../Core/Src/main.c:398:7: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  398 |       printf("\033[9;1Hin Task04...%d\r\n", n++);
+      |       ^~~~~~
+../Core/Src/main.c:398:7: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Test03-RTOS.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Workspace2\ARM_Source\Test03-RTOS\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test03-RTOS.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test03-RTOS.elf
+ 
+arm-none-eabi-size   Test03-RTOS.elf 
+arm-none-eabi-objdump -h -S  Test03-RTOS.elf  > "Test03-RTOS.list"
+   text	   data	    bss	    dec	    hex	filename
+  25596	    116	  18436	  44148	   ac74	Test03-RTOS.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test03-RTOS.list
+ 
+
+15:42:09 Build Finished. 0 errors, 7 warnings. (took 1s.642ms)
+

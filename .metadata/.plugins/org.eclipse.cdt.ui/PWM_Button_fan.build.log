@@ -1,0 +1,10 @@
+12:18:24 **** Incremental Build of configuration Debug for project PWM_Button_fan ****
+make -j4 all 
+arm-none-eabi-size   PWM_Button_fan.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9536	     20	   1644	  11200	   2bc0	PWM_Button_fan.elf
+Finished building: default.size.stdout
+ 
+
+12:18:25 Build Finished. 0 errors, 0 warnings. (took 583ms)
+

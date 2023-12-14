@@ -1,0 +1,59 @@
+16:55:29 **** Incremental Build of configuration Debug for project Test02-ADC ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:52:
+../Core/Src/../../../myLib/myLib.c: In function '__io_putchar':
+../Core/Src/../../../myLib/myLib.c:3:30: warning: passing argument 2 of 'HAL_UART_Transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+    3 |   HAL_UART_Transmit(&huart2, &c, 1, 10);
+      |                              ^~
+      |                              |
+      |                              int *
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:411,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:722:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'int *'
+  722 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+../Core/Src/main.c: In function 'myDelay':
+../Core/Src/main.c:73:7: warning: implicit declaration of function 'noOperation' [-Wimplicit-function-declaration]
+   73 |       noOperation();
+      |       ^~~~~~~~~~~
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:86:6: warning: conflicting types for 'noOperation'; have 'void()'
+   86 | void noOperation() {}
+      |      ^~~~~~~~~~~
+../Core/Src/main.c:73:7: note: previous implicit declaration of 'noOperation' with type 'void()'
+   73 |       noOperation();
+      |       ^~~~~~~~~~~
+../Core/Src/main.c: In function 'HAL_ADC_ConvCpltCallback':
+../Core/Src/main.c:94:5: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   94 |     printf("(intr)X Value: %d\r\n",xValue);
+      |     ^~~~~~
+../Core/Src/main.c:53:1: note: include '<stdio.h>' or provide a declaration of 'printf'
+   52 | #include "../../../myLib/myLib.c"
+  +++ |+#include <stdio.h>
+   53 | /* USER CODE END PV */
+../Core/Src/main.c:94:5: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+   94 |     printf("(intr)X Value: %d\r\n",xValue);
+      |     ^~~~~~
+../Core/Src/main.c:94:5: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:138:3: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
+  138 |   printf("\033[1J\033[1;1HProgram Restart...\r\n");
+      |   ^~~~~~
+../Core/Src/main.c:138:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+arm-none-eabi-gcc -o "Test02-ADC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Workspace2\ARM_Source\Test02-ADC\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Test02-ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Test02-ADC.elf
+ 
+arm-none-eabi-size   Test02-ADC.elf 
+arm-none-eabi-objdump -h -S  Test02-ADC.elf  > "Test02-ADC.list"
+   text	   data	    bss	    dec	    hex	filename
+  19364	    120	   2288	  21772	   550c	Test02-ADC.elf
+Finished building: default.size.stdout
+ 
+Finished building: Test02-ADC.list
+ 
+
+16:55:30 Build Finished. 0 errors, 6 warnings. (took 1s.386ms)
+

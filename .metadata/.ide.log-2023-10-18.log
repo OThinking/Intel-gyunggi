@@ -1,0 +1,6 @@
+2023-10-18 09:01:52,653 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 360491496 Bytes (1007681536)
+2023-10-18 09:01:59,109 [INFO] WebApp:330 - JxBrowser engine has been closed 
+2023-10-18 09:01:59,109 [INFO] WebAppUi:430 - JxBrowser engine has been closed 
+2023-10-18 09:01:59,109 [INFO] WebAppUi:467 - Close the Jxbrowser engine manually
+2023-10-18 09:02:10,630 [INFO] WebAppUi:471 - cannot clean
+2023-10-18 09:02:10,630 [ERROR] WebAppUi:477 - Problem found when deleting profiles folder
