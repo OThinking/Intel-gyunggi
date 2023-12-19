@@ -9,6 +9,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Workspace2\ARM_Source2\Test03-RTOS"/>
 			<item value="C:\Workspace2\arm\Button"/>
 			<item value="C:\Workspace2\ARM_Source\LED"/>
 			<item value="C:\Workspace2\arm\Button2"/>
